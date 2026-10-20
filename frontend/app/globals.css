@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+/* Tailwind ko bolo ki components aur app dono scan kare */
+@source "../components";
+@source "../app";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+body {
+  background: #ffffff;
+  color: #171717;
+  font-family: Arial, Helvetica, sans-serif;
+}
