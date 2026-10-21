@@ -30,3 +30,5 @@ Thumbs.db
 *.tsbuildinfo
 frontend/next-env.d.ts
 
+# Internal Development Docs
+development/
