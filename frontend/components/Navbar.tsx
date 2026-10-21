@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useCallback, useState } from "react";
+import { useCallback, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Phone, Menu } from "lucide-react";
@@ -15,7 +15,7 @@ export default function Navbar() {
         <header className="sticky top-0 z-50 w-full bg-white shadow-[0_1px_3px_rgba(0,0,0,0.06)]">
 
             {/* Side padding in % to match the Figma (logo 5.5% from the left, button 2.4% from the right) */}
-            <div className="flex items-center justify-between h-16 lg:h-[66px] px-4 sm:px-6 lg:pl-[5.5%] lg:pr-[2.4%]">
+            <div className="flex items-center justify-between h-16 lg:h-16.5 px-4 sm:px-6 lg:pl-[5.5%] lg:pr-[2.4%]">
 
                 {/* --- 1. LOGO --- */}
                 <Link href="/" aria-label="KivoKey home" className="shrink-0">
@@ -25,7 +25,7 @@ export default function Navbar() {
                         width={820}
                         height={216}
                         loading="eager"
-                        className="h-10 lg:h-12 w-auto"
+                        className="h-9 min-[375px]:h-10 lg:h-12 w-auto"
                     />
                 </Link>
 
@@ -55,7 +55,7 @@ export default function Navbar() {
                     {/* Yellow Action Button */}
                     <Link
                         href="/quote"
-                        className="ml-8 inline-flex items-center justify-center h-[41px] px-6 rounded-lg bg-[#FEE802] hover:bg-[#F2DC00] text-[#02020E] text-[15px] font-bold whitespace-nowrap transition-transform active:scale-95"
+                        className="ml-8 inline-flex items-center justify-center h-10.25 px-6 rounded-lg bg-[#FEE802] hover:bg-[#F2DC00] text-[#02020E] text-[15px] font-bold whitespace-nowrap transition-transform active:scale-95"
                     >
                         Get quote + schedule
                     </Link>

@@ -1,6 +1,6 @@
 export default function HeroHeading() {
     return (
-        <h1 className="text-[34px] sm:text-5xl font-extrabold leading-[1.1] tracking-tight text-[#00061A] lg:text-[length:3.5cqw] lg:leading-[1.05] lg:whitespace-nowrap">
+        <h1 className="text-[28px] min-[375px]:text-[34px] sm:text-5xl font-extrabold leading-[1.1] tracking-tight text-[#00061A] lg:text-[length:3.5cqw] lg:leading-[1.05] lg:whitespace-nowrap">
             We come right
             <br />
             to you for{" "}

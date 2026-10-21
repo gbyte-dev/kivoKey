@@ -9,6 +9,11 @@ import OtherServices from "@/components/service-page/OtherServices";
 import HowItWorksSection from "@/components/how-it-works/HowItWorksSection";
 import GetStartedSection from "@/components/get-started/GetStartedSection";
 
+// The whole page depends on the service in the URL, and reading params outside <Suspense> keeps a real
+// 404 status for unknown services (inside Suspense it becomes a "soft" 404 with status 200). The pages
+// are prerendered, so opting out of instant-navigation validation costs little.
+export const instant = false;
+
 // Prerender every service subpage at build time
 export function generateStaticParams() {
     return services.map((service) => ({ slug: service.slug }));
