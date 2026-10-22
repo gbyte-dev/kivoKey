@@ -9,6 +9,7 @@ export type ServiceLocation = {
     state: StateAbbr;
     lat: number;
     lng: number;
+    timeZone: string; // IANA zone; appointment windows are in the market's local time (spec §4)
     active: boolean; // only active locations are shown on the site
     zips: string[]; // ZIP codes served from this city (drawn as the service area on its map)
     nearbyAreas: string[]; // "We also cover these areas" (optional, can be empty)
@@ -32,6 +33,11 @@ export async function getActiveLocations(): Promise<ServiceLocation[]> {
 
 export async function getLocation(slug: string): Promise<ServiceLocation | undefined> {
     return (await getActiveLocations()).find((location) => location.slug === slug);
+}
+
+// The active city (if any) whose service area includes this ZIP code
+export async function findLocationByZip(zip: string): Promise<ServiceLocation | undefined> {
+    return (await getActiveLocations()).find((location) => location.zips.includes(zip));
 }
 
 // Boundary shapes for the given ZIP codes (GeoJSON), used to draw a city's service area
